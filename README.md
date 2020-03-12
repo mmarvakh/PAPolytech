@@ -4,7 +4,7 @@
 
 **В скором времени будет добавлена ссылка на сайт**
 
-Ссылка на доску в Trello - **[КЛИК](http://https://trello.com/b/cOZl70tJ/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-fsc "КЛИК")**
+Ссылка на доску в Trello - **[КЛИК](https://trello.com/b/cOZl70tJ/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-fsc "КЛИК")**
 
 ## Участники
 

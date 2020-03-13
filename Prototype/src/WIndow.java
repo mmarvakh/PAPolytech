@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+
     class Window {
     public static void main(String[] args) {
         begin();
@@ -150,8 +151,8 @@ import java.awt.*;
                     "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
             switch (n) {
                 case "First question lvl 2":
-                    //answer(Firstlevel.ans51);
-                    System.out.println(Firstlevel.ans51);
+                    answer(Firstlevel.ans51);
+                    //System.out.println(Firstlevel.ans51);
                     break;
                 case "Second question lvl 2":
                     System.out.println(Firstlevel.ans52);
@@ -168,10 +169,14 @@ import java.awt.*;
             }
         }
 
-    /*JFrame f;
-        public static void answer(String ans){
-            JOptionPane.showInternalMessageDialog(null, ans,
-                    "Ответ", JOptionPane.INFORMATION_MESSAGE);
+        public static void answer(String ans) {
+
+
+            // create a jframe
+            JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+
+            // show a joptionpane dialog using showMessageDialog
+            JOptionPane.showMessageDialog(frame, ans, "Backup problem", JOptionPane.INFORMATION_MESSAGE);
         }
-        */
+
 }

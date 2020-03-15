@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 class Window {
     public static void main(String[] args) {
@@ -178,9 +179,9 @@ class Window {
     }
 
     public static void answer(String ans) {
-
+        ImageIcon icon = new ImageIcon("FSCImage.png");
         JFrame frame = new JFrame("JOptionPane showMessageDialog example");
-        JOptionPane.showMessageDialog(frame, ans, "Ответ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(frame, ans, "Ответ", JOptionPane.INFORMATION_MESSAGE, icon);
     }
     public static void backup(){
         begin();

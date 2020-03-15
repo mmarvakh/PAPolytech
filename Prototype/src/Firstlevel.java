@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Firstlevel {
     //Начальные
     static final String lvl11 = "Я лесник";

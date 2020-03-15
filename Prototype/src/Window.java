@@ -57,9 +57,10 @@ class Window {
         */
 
     public static void case11(){
+        ImageIcon icon = new ImageIcon("TimberImage.png");
         String[] options = {Firstlevel.lvl211, Firstlevel.lvl212, Firstlevel.lvl213, Firstlevel.lvl214, Firstlevel.lvl215,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
-                "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                "First level", JOptionPane.QUESTION_MESSAGE, icon, options, options[2]);
         switch (n) {
             case Firstlevel.lvl211:
                 answer(Firstlevel.ans11);
@@ -81,9 +82,10 @@ class Window {
         }
     }
     public static void case12(){
+        ImageIcon icon = new ImageIcon("BusinessImage.png");
         String[] options = {Firstlevel.lvl221, Firstlevel.lvl222, Firstlevel.lvl223, Firstlevel.lvl224, Firstlevel.lvl225,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
-                "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                "First level", JOptionPane.QUESTION_MESSAGE, icon, options, options[2]);
         switch (n) {
             case Firstlevel.lvl221:
                 answer(Firstlevel.ans21);
@@ -105,9 +107,10 @@ class Window {
         }
     }
     public static void case13(){
+        ImageIcon icon = new ImageIcon("TreeImage.png");
         String[] options = {Firstlevel.lvl231, Firstlevel.lvl232, Firstlevel.lvl233, Firstlevel.lvl234, Firstlevel.lvl235,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
-                "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                "First level", JOptionPane.QUESTION_MESSAGE, icon, options, options[2]);
         switch (n) {
             case Firstlevel.lvl231:
                 answer(Firstlevel.ans31);
@@ -129,9 +132,10 @@ class Window {
         }
     }
     public static void case14(){
+        ImageIcon icon = new ImageIcon("VillageImage.png");
         String[] options = {Firstlevel.lvl241, Firstlevel.lvl242, Firstlevel.lvl243, Firstlevel.lvl244, Firstlevel.lvl245,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
-                "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                "First level", JOptionPane.QUESTION_MESSAGE, icon, options, options[2]);
         switch (n) {
             case Firstlevel.lvl241:
                 answer(Firstlevel.ans41);
@@ -153,13 +157,13 @@ class Window {
         }
     }
     public static void case15(){
+        ImageIcon icon = new ImageIcon("WatcherImage.png");
         String[] options = {Firstlevel.lvl251, Firstlevel.lvl252, Firstlevel.lvl253, Firstlevel.lvl254, Firstlevel.lvl255,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
-                "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                "First level", JOptionPane.QUESTION_MESSAGE, icon, options, options[2]);
         switch (n) {
             case Firstlevel.lvl251:
                 answer(Firstlevel.ans51);
-                //System.out.println(Firstlevel.ans51);
                 break;
             case Firstlevel.lvl252:
                 answer(Firstlevel.ans52);

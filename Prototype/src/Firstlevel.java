@@ -65,4 +65,6 @@ public class Firstlevel {
     static final String ans53 = "Потому что фантазия кончилась";
     static final String ans54 = "Отлично";
     static final String ans55 = "Надеюсь, что нет";
+    // Возврат
+    static final String backup = "Назад";
 }

@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +6,6 @@ class Window {
     public static void main(String[] args) {
         begin();
     }
-
     public static void begin() {
         String[] options = {Firstlevel.lvl11, Firstlevel.lvl12, Firstlevel.lvl13, Firstlevel.lvl14, Firstlevel.lvl15,};
         String n = (String) JOptionPane.showInputDialog(null, "Кто вы?",
@@ -58,7 +56,7 @@ class Window {
         */
 
     public static void case11(){
-        String[] options = {Firstlevel.lvl211, Firstlevel.lvl212, Firstlevel.lvl213, Firstlevel.lvl214, Firstlevel.lvl215,};
+        String[] options = {Firstlevel.lvl211, Firstlevel.lvl212, Firstlevel.lvl213, Firstlevel.lvl214, Firstlevel.lvl215,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
                 "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         switch (n) {
@@ -77,10 +75,12 @@ class Window {
             case Firstlevel.lvl215:
                 answer(Firstlevel.ans15);
                 break;
+            case Firstlevel.backup:
+                backup();
         }
     }
     public static void case12(){
-        String[] options = {Firstlevel.lvl221, Firstlevel.lvl222, Firstlevel.lvl223, Firstlevel.lvl224, Firstlevel.lvl225,};
+        String[] options = {Firstlevel.lvl221, Firstlevel.lvl222, Firstlevel.lvl223, Firstlevel.lvl224, Firstlevel.lvl225,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
                 "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         switch (n) {
@@ -99,10 +99,12 @@ class Window {
             case Firstlevel.lvl225:
                 answer(Firstlevel.ans25);
                 break;
+            case Firstlevel.backup:
+                backup();
         }
     }
     public static void case13(){
-        String[] options = {Firstlevel.lvl231, Firstlevel.lvl232, Firstlevel.lvl233, Firstlevel.lvl234, Firstlevel.lvl235,};
+        String[] options = {Firstlevel.lvl231, Firstlevel.lvl232, Firstlevel.lvl233, Firstlevel.lvl234, Firstlevel.lvl235,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
                 "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         switch (n) {
@@ -121,10 +123,12 @@ class Window {
             case Firstlevel.lvl235:
                 answer(Firstlevel.ans35);
                 break;
+            case Firstlevel.backup:
+                backup();
         }
     }
     public static void case14(){
-        String[] options = {Firstlevel.lvl241, Firstlevel.lvl242, Firstlevel.lvl243, Firstlevel.lvl244, Firstlevel.lvl245,};
+        String[] options = {Firstlevel.lvl241, Firstlevel.lvl242, Firstlevel.lvl243, Firstlevel.lvl244, Firstlevel.lvl245,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
                 "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         switch (n) {
@@ -143,10 +147,12 @@ class Window {
             case Firstlevel.lvl245:
                 answer(Firstlevel.ans45);
                 break;
+            case Firstlevel.backup:
+                backup();
         }
     }
     public static void case15(){
-        String[] options = {Firstlevel.lvl251, Firstlevel.lvl252, Firstlevel.lvl253, Firstlevel.lvl254, Firstlevel.lvl255,};
+        String[] options = {Firstlevel.lvl251, Firstlevel.lvl252, Firstlevel.lvl253, Firstlevel.lvl254, Firstlevel.lvl255,Firstlevel.backup};
         String n = (String) JOptionPane.showInputDialog(null, "What do you want?",
                 "First level", JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         switch (n) {
@@ -166,14 +172,17 @@ class Window {
             case Firstlevel.lvl255:
                 answer(Firstlevel.ans55);
                 break;
+            case Firstlevel.backup:
+                backup();
         }
     }
 
     public static void answer(String ans) {
 
         JFrame frame = new JFrame("JOptionPane showMessageDialog example");
-
         JOptionPane.showMessageDialog(frame, ans, "Ответ", JOptionPane.INFORMATION_MESSAGE);
     }
-
+    public static void backup(){
+        begin();
+    }
 }

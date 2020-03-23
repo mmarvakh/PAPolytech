@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar a {
+    position: relative !important;
+    text-decoration: none !important;
+}
+
+#navbar a::before {
+    content: '' !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 1.8px !important;
+    background-color: #fff !important;
+    transition: .3s !important;
+    transform: scaleX(0) !important
+}
+
+#navbar a:hover::before {
+    transform: scaleX(1) !important;
+}
+
+h2 {
+    margin-top: 5%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #000;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.about-project {
+    color: #444;
+}
+
+#about-team ul {
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+ul span {
+    font-weight: bold;
+}
+
+#our-last-actions p {
+    margin-top: 1%;
+    color: #a7a2a2;
+    font-size: 1rem;
+}
+
+#our-last-actions span {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #444;
+}
+
+#links a {
+    color: #000;
+    position: relative !important;
+    text-decoration: none !important;
+}
+
+#links a::before {
+    content: '' !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #000 !important;
+    transition: .3s !important;
+    transform: scaleX(0) !important
+}
+
+#links a:hover::before {
+    transform: scaleX(1) !important;
+}

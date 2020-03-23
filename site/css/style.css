@@ -81,3 +81,18 @@ ul span {
 #links a:hover::before {
     transform: scaleX(1) !important;
 }
+
+footer {
+    height: 50px;
+    width: 100%;
+    background-color: #343a40;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    margin: auto 0;
+    padding-top: 0.5% !important;
+}

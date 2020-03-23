@@ -31,7 +31,7 @@ h2 {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -41,7 +41,7 @@ p {
 
 #about-team ul {
     list-style: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 ul span {
@@ -51,11 +51,11 @@ ul span {
 #our-last-actions p {
     margin-top: 1%;
     color: #a7a2a2;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 #our-last-actions span {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #444;
 }
@@ -90,9 +90,9 @@ footer {
 
 footer p {
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: normal;
     text-align: center;
     margin: auto 0;
-    padding-top: 0.5% !important;
+    padding-top: 1% !important;
 }

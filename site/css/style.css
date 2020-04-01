@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #navbar a {
@@ -95,4 +96,23 @@ footer p {
     text-align: center;
     margin: auto 0;
     padding-top: 1% !important;
+}
+
+.login-form {
+    margin: 15% auto;
+    width: 50%
+}
+
+input[type="submit"] {
+    padding: 0.6% 2%;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.login-form p, .admin-form p {
+    margin: 1% 0 0 0;
+}
+
+textarea {
+    width: 100%;
 }

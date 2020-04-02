@@ -1,3 +1,20 @@
+<?php
+
+$host = "localhost";
+$db = "fscProject";
+$username = "root";
+$password = "M8112001m";
+$charset = "utf8";
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$connection = new PDO($dsn, $username, $password);
+
+$postsData =$connection->query("SELECT * FROM posts");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

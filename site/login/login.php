@@ -1,3 +1,33 @@
+<?php
+
+session_start();
+ini_set("session.gc.maxlifetime", 3600);
+
+$host = "localhost";
+$db = "fscProject";
+$username = "root";
+$password = "M8112001m";
+$charset = "utf8";
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$connection = new PDO($dsn, $username, $password);
+
+$loginData = $connection->query("SELECT * FROM team");
+
+if ($_POST["login"]) {
+    foreach ($loginData as $login) {
+        if ($_POST["login"] == $login["login"] && $_POST["password"] == $login["password"]) {
+            $_SESSION["login"] = $_POST["login"];
+            $_SESSION["password"] = $_POST["password"];
+            header("Location: admin.php");
+        }
+    }
+    echo "<div class='error'>Неверный логин или пароль!</div>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -28,7 +58,7 @@
             <p>Логин:</p>
             <input name="login" type="text" required>
             <p>Пароль:</p>
-            <input name="password" type="text" required>
+            <input name="password" type="password" required>
             <br><br>
             <input type="submit" value="Авторизоваться">
         </form>

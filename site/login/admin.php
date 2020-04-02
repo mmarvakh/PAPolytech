@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+
+$host = "localhost";
+$db = "fscProject";
+$username = "root";
+$password = "M8112001m";
+$charset = "utf8";
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+$connection = new PDO($dsn, $username, $password);
+
+$loginData = $connection->query("SELECT * FROM team");
+
+if (!$_SESSION['login'] || !$_SESSION['password']) {
+    header("Location: login.php");
+    die();
+}
+
+if ($_POST["logOut"]) {
+    session_destroy();
+    header("Location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -18,25 +46,18 @@
                 data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a href="http://marvakh.ru/" class="nav-link active">На главную</a> </li>
-                    <li class="nav-item"> <a href="http://marvakh.ru/login" class="nav-link">Выйти</a> </li>
+                    <li class="nav-item"> <a href="http://marvakh.ru/" class="nav-link active" target="_blank">На главную</a> </li>
                 </ul>
             </div>
         </div>
     </nav>
     <section class="container">
         <h2 class="current-user">
-            Текущий пользователь: 
+            Текущий пользователь: <?= $_SESSION["login"] ?>
         </h2>
     </section>
     <section class="container text-left admin-form" id="login-form">
         <form method="POST">
-            <div class="choose-author">
-                <p>Выбор автора:</p>
-                <select name="" id="">
-                    <option value=""></option>
-                </select>
-            </div>
             <div class="theme-of-message">
                 <p>Тема сообщения:</p>
                 <input name="theme" type="text">
@@ -45,6 +66,14 @@
                 <p>Сообщение:</p>
                 <textarea name="message" id="" cols="30" rows="10"></textarea>
             </div>
+            <div class="text-right">
+                <input type="submit" value="Запостить статью">
+            </div>
+        </form>
+    </section>
+    <section class="container text-center">
+        <form method="POST">
+            <input name="logOut" type="submit" value="Выйти из системы">
         </form>
     </section>
 </body>

@@ -31,6 +31,13 @@ $currentUserLogin = $_SESSION["login"];
 $currentUserName = $connection->query("SELECT * FROM team WHERE login='$currentUserLogin'");
 $currentUserName = $currentUserName->fetch();
 
+if ($_POST["postMessage"]) {
+    $postBody = $_POST["postMessage"];
+    $postTitle = $_POST["title"];
+    $newPost = $connection->query("INSERT INTO posts (date, authorsLogin, postMessage, title) VALUES (current_time(), '$currentUserLogin', '$postBody', '$postTitle')");
+    header("Location: success.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -78,14 +85,6 @@ $currentUserName = $currentUserName->fetch();
                 <input type="submit" value="Запостить статью">
             </div>
         </form>
-        <?
-            if ($_POST["postMessage"]) {
-                $postBody = $_POST["postMessage"];
-                $postTitle = $_POST["title"];
-                $newPost = $connection->query("INSERT INTO posts (date, authorsLogin, postMessage, title) VALUES (current_time(), '$currentUserLogin', '$postBody', '$postTitle')");
-                echo "<div>Пост успешно отправлен!</div>";
-            }
-        ?>
     </section>
     <section class="container text-center" style="margin-top: 10%">
         <form method="POST">

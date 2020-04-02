@@ -64,7 +64,7 @@ if ($_POST["login"]) {
             <p>Пароль:</p>
             <input name="password" type="password" required>
             <br><br>
-            <input type="submit" value="Авторизоваться">
+            <input class="authorization" type="submit" value="Авторизоваться">
         </form>
     </section>
 </body>

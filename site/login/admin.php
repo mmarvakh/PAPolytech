@@ -1,7 +1,19 @@
 <?php
 
+// Начало сессии и проверка на наличие корректного логина и пароля, если они отсутствуют, то произойдёт перенаправление на страницу авторизации
 session_start();
 
+if (!$_SESSION['login'] || !$_SESSION['password']) {
+    header("Location: login.php");
+    die();
+}
+
+// При нажатии на кнопку выхода из панели администратора пользователь будет перенаправлен на страницу авторизации
+if ($_POST["logOut"]) {
+    session_destroy();
+    header("Location: login.php");
+}
+// Объявление переменных и внесение в них данных для подключения к СУБД
 $host = "localhost";
 $db = "fscProject";
 $username = "root";
@@ -12,21 +24,12 @@ $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 $connection = new PDO($dsn, $username, $password);
 
+// Выборка данных из БД
 $loginData = $connection->query("SELECT * FROM team");
 $postsData = $connection->query("SELECT * FROM posts");
 $currentUserLogin = $_SESSION["login"];
 $currentUserName = $connection->query("SELECT * FROM team WHERE login='$currentUserLogin'");
 $currentUserName = $currentUserName->fetch();
-
-if (!$_SESSION['login'] || !$_SESSION['password']) {
-    header("Location: login.php");
-    die();
-}
-
-if ($_POST["logOut"]) {
-    session_destroy();
-    header("Location: login.php");
-}
 
 ?>
 
@@ -65,16 +68,24 @@ if ($_POST["logOut"]) {
         <form method="POST">
             <div class="theme-of-message">
                 <p>Тема сообщения:</p>
-                <input name="theme" type="text">
+                <input name="title" type="text" required>
             </div>
             <div class="message">
                 <p>Сообщение:</p>
-                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                <textarea name="postMessage" id="" cols="30" rows="10" required></textarea>
             </div>
             <div class="text-right">
                 <input type="submit" value="Запостить статью">
             </div>
         </form>
+        <?
+            if ($_POST["postMessage"]) {
+                $postBody = $_POST["postMessage"];
+                $postTitle = $_POST["title"];
+                $newPost = $connection->query("INSERT INTO posts (date, authorsLogin, postMessage, title) VALUES (current_time(), '$currentUserLogin', '$postBody', '$postTitle')");
+                echo "<div>Пост успешно отправлен!</div>";
+            }
+        ?>
     </section>
     <section class="container text-center" style="margin-top: 10%">
         <form method="POST">

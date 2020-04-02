@@ -13,6 +13,10 @@ $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $connection = new PDO($dsn, $username, $password);
 
 $loginData = $connection->query("SELECT * FROM team");
+$postsData = $connection->query("SELECT * FROM posts");
+$currentUserLogin = $_SESSION["login"];
+$currentUserName = $connection->query("SELECT * FROM team WHERE login='$currentUserLogin'");
+$currentUserName = $currentUserName->fetch();
 
 if (!$_SESSION['login'] || !$_SESSION['password']) {
     header("Location: login.php");
@@ -42,7 +46,7 @@ if ($_POST["logOut"]) {
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="navbar">
-        <div class="container navbar-inside"><h3 style="color: #fff;">FAQ 191-361</h3><button class="navbar-toggler" type="button" data-toggle="collapse"
+        <div class="container navbar-inside"><h3 style="color: #fff;">Панель администратора</h3><button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
@@ -53,10 +57,11 @@ if ($_POST["logOut"]) {
     </nav>
     <section class="container">
         <h2 class="current-user">
-            Текущий пользователь: <?= $_SESSION["login"] ?>
+            Текущий пользователь: <span class="authorName"><?= $currentUserName["name"] ?></span>
         </h2>
     </section>
-    <section class="container text-left admin-form" id="login-form">
+    <section class="container text-left admin-form" id="login-form" style="margin-top: 2%">
+        <h3>Добавить статью на сайт:</h3>
         <form method="POST">
             <div class="theme-of-message">
                 <p>Тема сообщения:</p>
@@ -71,7 +76,7 @@ if ($_POST["logOut"]) {
             </div>
         </form>
     </section>
-    <section class="container text-center">
+    <section class="container text-center" style="margin-top: 10%">
         <form method="POST">
             <input name="logOut" type="submit" value="Выйти из системы">
         </form>

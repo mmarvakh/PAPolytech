@@ -23,6 +23,7 @@ if ($_POST["login"]) {
             header("Location: admin.php");
         }
     }
+
     echo "<div class='error'>Неверный логин или пароль!</div>";
 }
 
@@ -53,6 +54,9 @@ if ($_POST["login"]) {
             </div>
         </div>
     </nav>
+    <section class="container">
+        <h2>Вход в панель администратора</h2>
+    </section>
     <section class="container text-left login-form" id="login-form">
         <form method="POST">
             <p>Логин:</p>

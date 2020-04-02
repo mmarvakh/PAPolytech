@@ -98,15 +98,24 @@ footer p {
     padding-top: 1% !important;
 }
 
-.login-form {
-    margin: 15% auto;
-    width: 50%
+.login-form form {
+    margin: 10% auto;
+    width: 18%;
+}
+
+form input[type="text"], textarea, form input[type="password"] {
+    border: 1px solid #444;
+    border-radius: 0.7rem;
+    padding: 1%;
 }
 
 input[type="submit"] {
-    padding: 0.6% 2%;
+    padding: 1% 10%;
     font-size: 16px;
-    background-color: #fff;
+    background: white;
+    border: 1px solid #444;
+    border-radius: 0.7rem;
+    cursor: pointer;
 }
 
 .login-form p, .admin-form p {

@@ -30,11 +30,13 @@ $postsData = $connection->query("SELECT * FROM posts");
 $currentUserLogin = $_SESSION["login"];
 $currentUserName = $connection->query("SELECT * FROM team WHERE login='$currentUserLogin'");
 $currentUserName = $currentUserName->fetch();
+$currentUserName = $currentUserName["name"];
 
+// Отправка данных из формы в БД
 if ($_POST["postMessage"]) {
     $postBody = $_POST["postMessage"];
     $postTitle = $_POST["title"];
-    $newPost = $connection->query("INSERT INTO posts (date, authorsLogin, postMessage, title) VALUES (current_time(), '$currentUserLogin', '$postBody', '$postTitle')");
+    $newPost = $connection->query("INSERT INTO posts (date, authorsLogin, postMessage, title, name) VALUES (current_time(), '$currentUserLogin', '$postBody', '$postTitle', '$currentUserName')");
     header("Location: success.php");
 }
 
@@ -67,14 +69,14 @@ if ($_POST["postMessage"]) {
     </nav>
     <section class="container">
         <h2 class="current-user">
-            Текущий пользователь: <span class="authorName"><?= $currentUserName["name"] ?></span>
+            Текущий пользователь: <span class="authorName"><?= $currentUserName ?></span>
         </h2>
     </section>
     <section class="container text-left admin-form" id="login-form" style="margin-top: 2%">
         <h3>Добавить статью на сайт:</h3>
         <form method="POST">
             <div class="theme-of-message">
-                <p>Тема сообщения:</p>
+                <p>Тема статьи:</p>
                 <input name="title" type="text" required>
             </div>
             <div class="message">
@@ -82,7 +84,7 @@ if ($_POST["postMessage"]) {
                 <textarea name="postMessage" id="" cols="30" rows="10" required></textarea>
             </div>
             <div class="text-right">
-                <input type="submit" value="Запостить статью">
+                <input name="sendPost" type="submit" value="Запостить статью">
             </div>
         </form>
     </section>

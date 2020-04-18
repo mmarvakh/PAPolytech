@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+#navbar a {
+    position: relative !important;
+    text-decoration: none !important;
+}
+
+#navbar a::before {
+    content: '' !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 1.8px !important;
+    background-color: #fff !important;
+    transition: .3s !important;
+    transform: scaleX(0) !important
+}
+
+#navbar a:hover::before {
+    transform: scaleX(1) !important;
+}
+
+h2 {
+    margin-top: 5%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #000;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.about-project {
+    color: #444;
+}
+
+#about-team ul {
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+ul span {
+    font-weight: bold;
+}
+
+#our-last-actions p {
+    margin-top: 1%;
+    color: #a7a2a2;
+    font-size: 0.8rem;
+}
+
+#our-last-actions span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+#links a {
+    color: #000;
+    position: relative !important;
+    text-decoration: none !important;
+}
+
+#links a::before {
+    content: '' !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #000 !important;
+    transition: .3s !important;
+    transform: scaleX(0) !important
+}
+
+#links a:hover::before {
+    transform: scaleX(1) !important;
+}
+
+footer {
+    height: 50px;
+    width: 100%;
+    background-color: #343a40;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-align: center;
+    margin: auto 0;
+    padding-top: 1% !important;
+}
+
+.login-form form {
+    margin: 10% auto;
+    width: 18%;
+}
+
+form input[type="text"], textarea, form input[type="password"] {
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    padding: 1%;
+}
+
+input[type="submit"] {
+    padding: 1% 10%;
+    font-size: 16px;
+    background: white;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.login-form p, .admin-form p {
+    margin: 1% 0 0 0;
+}
+
+textarea {
+    width: 100%;
+}
+
+.error {
+    color: darkred;
+    text-align: center;
+    font-size: 28px;
+}
+
+input[name="logOut"] {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.authorization, input[name="sendPost"] {
+    background-color: mediumspringgreen !important;
+    border: 1px solid mediumspringgreen !important;
+}
+
+.current-user .authorName {
+    color: #444444;
+}

@@ -1,4 +1,4 @@
-﻿import telebot
+import telebot
 import config
 import datetime
 
@@ -7,6 +7,8 @@ from telebot import types
 bot = telebot.TeleBot(config.TOKEN)
 
 dateAndTime = datetime.datetime.today().strftime("%Y.%m.%d %H:%M:%S")
+
+
 
 @bot.message_handler(commands=['start'])
 def welcome_user(message):
@@ -24,6 +26,8 @@ def welcome_user(message):
     bot.send_message(message.chat.id, "Добро пожаловать, <b>{0.first_name}</b>!\n"
                                       "Это - тестовый бот, созданный командой группы 191-361"
                                       " для дальнейшей модификации в FAQ бота организации FSC".format(message.from_user, bot.get_me()), parse_mode="html", reply_markup=markup)
+
+# 2
 
 
 @bot.message_handler(content_types=["text"])
@@ -53,3 +57,22 @@ def answer_on_message(message):
 
             bot.send_message(message.chat.id, "К сожалению, я пока не умею обрабатывать "
                                               "произвольные входящие сообщения 😞", reply_markup=markup_inline)
+
+
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline(call):
+    try:
+        if call.message:
+            if call.data == "why":
+                bot.send_message(call.message.chat.id, "Потому что мой создатель этого не предусмотрел 😡")
+
+            elif call.data == "when":
+                bot.send_message(call.message.chat.id, "В скором времени, "
+                                                       "если моё существование будет иметь в то время смысл 🤔")
+
+    except Exception as e:
+        print(repr(e))
+
+
+bot.polling(none_stop=True)

@@ -115,3 +115,45 @@ nav {
     transition: all 0.3s ease;
 }
 
+.nav-menu ul>li>ul {
+    display: none;
+    position: absolute;
+    width: max-content;
+    background-color: #75c045;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+.nav-menu ul>li>ul>li>a {
+    display: unset;
+    padding: 0;
+    letter-spacing: normal;
+    font-weight: normal;
+    line-height: unset;
+    height: unset;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    transition: all 0.1s ease;
+}
+
+.nav-menu ul>li>ul>li {
+    border-top: none;
+    border-right: none;
+    position: unset;
+}
+
+.nav-menu ul>li>ul>li:first-child {
+    border-left: unset;
+}
+
+.nav-menu ul>li>ul>li>a:hover {
+    background-color: unset;
+    color: #fff;
+    box-shadow: unset;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li:hover > ul {
+    display: block;
+}

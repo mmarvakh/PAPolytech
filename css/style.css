@@ -64,12 +64,13 @@ hr {
 
 .nav-logo {
     padding: 0 !important;
+    top: -5px;
 }
 
 nav {
     display: flex;
-    justify-content: baseline;
-    align-items: baseline;
+    justify-content: space-between;
+    align-items: flex-end
 }
 
 .nav-menu {
@@ -79,26 +80,38 @@ nav {
 .nav-menu ul {
     display: flex;
     margin-bottom: 0;
+    vertical-align: bottom;
 }
 
 .nav-menu ul li {
-    display: flex;
-    height: 130px;
     list-style: none;
-    padding: 0 20px;
     border-top: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    position: relative;
+}
+
+.nav-menu ul li:first-child {
     border-left: 1px solid #e6e6e6;
 }
 
-.nav-menu ul li a {
-    display: flex;
+.nav-menu ul>li>a {
+    display: table-cell;
+    padding: 0 20px;
     letter-spacing: normal;
     font-weight: bold;
     line-height: 15px;
-    font-size: 15px;
+    height: 80px;
+    font-size: 16px;
     text-decoration: none;
     color: #646464;
-    align-items: center;
-    justify-content: center;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul>li>a:hover {
+    background-color: #75c045;
+    color: #fff !important;
+    box-shadow: inset 0 80px #75c045;
+    transition: all 0.3s ease;
 }
 

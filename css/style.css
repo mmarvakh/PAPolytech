@@ -158,13 +158,26 @@ nav {
     display: block;
 }
 
-.footer-info {
+.footer-list {
     background-color: #336949;
+}
+
+.footer-info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-info {
     display: flex;
     font-size: 12px;
     height: 40px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0 !important;
+}
+
+.footer-info:last-child {
+    font-size: 14px;
 }
 
 .footer-info li {
@@ -216,4 +229,5 @@ footer {
     height: 600px;
     margin: 10% auto;
     background-color: #f7f7f7;
+    border-radius: 0.8rem;
 }

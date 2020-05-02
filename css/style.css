@@ -122,6 +122,7 @@ nav {
     background-color: #75c045;
     padding: 30px;
     border: 1px solid #ccc;
+    z-index: 100;
 }
 
 .nav-menu ul>li>ul>li>a {
@@ -204,7 +205,7 @@ nav {
 }
 
 main {
-    height: 800px;
+    
 }
 
 footer {
@@ -225,18 +226,33 @@ footer {
 }
 
 .bot-container {
+    display: block;
     width: 60%;
     height: 600px;
     margin: 10% auto;
     background-color: #f7f7f7;
     border-radius: 0.8rem;
-    position: relative;
 }
 
 .bot-message {
+    display: inline-block;
     background-color: #fff;
-    border-radius: 3rem;
-    padding: 1% 0 1% 3%;
+    border-radius: 1rem;
+    padding: 2% 3%;
     font-size: 14px;
     width: 60%;
+    margin-top: 5%;
+    margin-left: 2%;
+    position: relative;
+}
+
+.date-of-message {
+    color: #646464;
+    font-size: 11px;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.message {
+    margin-bottom: 0;
 }

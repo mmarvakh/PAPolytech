@@ -284,4 +284,22 @@ footer {
 
 .li-question {
     cursor: pointer;
+    padding: 2% 0;
+    position: relative;
+}
+
+.li-question::before {
+    content: '' !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 1.8px !important;
+    background-color: #fff !important;
+    transition: .3s !important;
+    transform: scaleX(0) !important
+}
+
+.li-question:hover::before {
+    transform: scaleX(1) !important;
 }

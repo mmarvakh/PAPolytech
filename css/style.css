@@ -256,3 +256,25 @@ footer {
 .message {
     margin-bottom: 0;
 }
+
+.bot-message-questions {
+    display: inline-block;
+    background-color: #75c045;
+    border-radius: 1rem;
+    padding: 2% 3% 0 3%;
+    font-size: 14px;
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 2%;
+    position: relative;
+}
+
+.bot-message-questions ul {
+    list-style: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.li-question {
+    cursor: pointer;
+}

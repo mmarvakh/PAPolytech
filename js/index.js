@@ -1,73 +1,96 @@
 
 const questionList = document.querySelectorAll(".li-question"),
-      questionBlock = document.querySelector(".bot-message-questions"),
       botContainer = document.querySelector(".bot-container"),
       userAnswer = document.createElement("div"),
       userMessage = document.createElement("p"),
       botAnswer = document.createElement("div"),
-      botMessage = document.createElement("p");
+      botMessage = document.createElement("p"),
+      answersInCategories = document.createElement("ul");
 
-const answerFirst = "Ответ на первый вопрос бла-бла-бла",
-      answerSecond = "Ответ на второй вопрос бла-бла-бла",
-      answerThird = "Ответ на третий вопрос бла-бла-бла",
-      answerFourth = "Ответ на четвёртый вопрос бла-бла-бла";
+userMessage.classList.add("message");
+userAnswer.classList.add("user-answer");
+answersInCategories.classList.add("bot-message-green")
+
+const categoryFirst = {
+    questionFirst: "Первый вопрос категории 1",
+    questionSecond: "Второй вопрос категории 1",
+    questionThird: "Третий вопрос категории 1",
+    questionFourth: "Четвёртый вопрос категории 1",
+}
+
+const categorySecond = {
+    questionFirst: "Первый вопрос категории 2",
+    questionSecond: "Второй вопрос категории 2",
+    questionThird: "Третий вопрос категории 2",
+    questionFourth: "Четвёртый вопрос категории 2",
+}
+
+const categoryThird = {
+    questionFirst: "Первый вопрос категории 3",
+    questionSecond: "Второй вопрос категории 3",
+    questionThird: "Третий вопрос категории 3",
+    questionFourth: "Четвёртый вопрос категории 3",
+}
+
+const categoryFourth = {
+    questionFirst: "Первый вопрос категории 4",
+    questionSecond: "Второй вопрос категории 4",
+    questionThird: "Третий вопрос категории 4",
+    questionFourth: "Четвёртый вопрос категории 4",
+}
+
+const arrayOfCategories = [categoryFirst, categorySecond, categoryThird, categoryFourth]
+
+Object.keys(categoryFirst).length
 
 questionList.forEach((elem) => {
 
     elem.addEventListener("click", () => {
-        userMessage.classList.add("message");      
-        userAnswer.appendChild(userMessage);     
 
-        userAnswer.classList.add("user-answer")
-        botContainer.appendChild(userAnswer);
+        let cloneOfUserAnswer = userAnswer.cloneNode(true),
+            cloneOfUserMessage = userMessage.cloneNode(true);
+             
+        cloneOfUserAnswer.appendChild(cloneOfUserMessage);     
+        
+        botContainer.appendChild(cloneOfUserAnswer);
 
-        userMessage.textContent = elem.textContent;
+        cloneOfUserMessage.textContent = elem.textContent;
 
-        if (elem.classList.contains("question-first")) {
-            console.log(1);
-            botMessage.classList.add("message");
-            botMessage.classList.add("answer")
-            botAnswer.appendChild(botMessage);
+        arrayOfCategories.forEach((element) => {
 
-            botAnswer.classList.add("bot-message-questions");
-            botContainer.appendChild(botAnswer);
+            if (arrayOfCategories.indexOf(element) == elem.id) {
 
-            botMessage.textContent = answerFirst;
-        }
+                let cloneOfAnswers = answersInCategories.cloneNode(true);
 
-        if (elem.classList.contains("question-second")) {
-            botMessage.classList.add("message");
-            botMessage.classList.add("answer")
-            botAnswer.appendChild(botMessage);
+                for (key in element) {
+                    let li = document.createElement("li");
 
-            botAnswer.classList.add("bot-message-questions");
-            botContainer.appendChild(botAnswer);
+                    li.classList.add("li-question");
 
-            botMessage.textContent = answerSecond;
-        }
+                    li.textContent = element[key];
 
-        if (elem.classList.contains("question-third")) {
-            botMessage.classList.add("message");
-            botMessage.classList.add("answer")
-            botAnswer.appendChild(botMessage);
+                    cloneOfAnswers.appendChild(li);
+                }
 
-            botAnswer.classList.add("bot-message-questions");
-            botContainer.appendChild(botAnswer);
+                botContainer.appendChild(cloneOfAnswers)
 
-            botMessage.textContent = answerThird;
-        }
+            }
 
-        if (elem.classList.contains("question-fourth")) {
-            botMessage.classList.add("message");
-            botMessage.classList.add("answer")
-            botAnswer.appendChild(botMessage);
+        })
 
-            botAnswer.classList.add("bot-message-questions");
-            botContainer.appendChild(botAnswer);
-
-            botMessage.textContent = answerFourth;
-        }
+        
 
     })
 
 });
+
+/*if (elem.classList.contains("question-first")) {
+    botMessage.classList.add("message");
+    botMessage.classList.add("answer")
+    botAnswer.appendChild(botMessage);
+
+    botAnswer.classList.add("bot-message-green");
+    botContainer.appendChild(botAnswer);
+
+    botMessage.textContent = answerFirst;
+}*/

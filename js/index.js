@@ -146,7 +146,7 @@ questionList.forEach((elem) => {
 
                     arrayOfAnswers.forEach((point) => {
 
-                        if (arrayOfAnswers.indexOf(point) == liElem.id) {
+                        if (arrayOfAnswers.indexOf(point) == elem.id) {
 
                             let cloneOfBotAnswer = botAnswer.cloneNode(true),
                                 cloneOfBotMessage = botMessage.cloneNode(true);

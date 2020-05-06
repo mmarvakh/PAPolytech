@@ -231,6 +231,16 @@ footer {
     margin: 10% auto;
     background-color: #f7f7f7;
     border-radius: 0.8rem;
+    overflow-y: auto;
+}
+
+.bot-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bot-container::-webkit-scrollbar-thumb {
+    border-radius: 9em;
+    background-color: #75c045;
 }
 
 .bot-message, .user-answer {
@@ -268,14 +278,13 @@ footer {
     background-color: #75c045;
     border-radius: 1rem;
     padding: 2% 3%;
-    font-size: 14px;
     width: max-content;
     margin-top: 2%;
     margin-left: 2%;
     position: relative;
     list-style: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 3%;
 }
 

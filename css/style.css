@@ -243,16 +243,21 @@ footer {
     background-color: #75c045;
 }
 
+.bot-message:first-child {
+    margin-top: 5%;
+}
+
 .bot-message, .user-answer {
     display: inline-block;
     background-color: #fff;
     border-radius: 1rem;
     padding: 2% 3%;
-    font-size: 14px;
+    font-size: 15px;
     width: max-content;
-    margin-top: 5%;
+    max-width: 65%;
     margin-left: 2%;
     position: relative;
+    margin-bottom: 2%;
 }
 
 .user-answer {
@@ -279,13 +284,15 @@ footer {
     border-radius: 1rem;
     padding: 2% 3%;
     width: max-content;
-    margin-top: 2%;
+    max-width: 450px;
     margin-left: 2%;
     position: relative;
     list-style: none;
     color: #fff;
     font-size: 14px;
     margin-bottom: 3%;
+    font-weight: 550;
+    text-transform: uppercase;
 }
 
 .answer {
@@ -295,6 +302,10 @@ footer {
 .bot-message-green ul {
     list-style: none;
     margin-bottom: 0
+}
+
+.bot-message span {
+    font-weight: bold;
 }
 
 .li-question {

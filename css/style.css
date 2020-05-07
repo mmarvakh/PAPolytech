@@ -228,7 +228,7 @@ footer {
     display: block;
     width: 60%;
     height: 700px;
-    margin: 10% auto;
+    margin: 10% auto 2% auto;
     background-color: #f7f7f7;
     border-radius: 0.8rem;
     overflow-y: auto;
@@ -308,6 +308,10 @@ footer {
     font-weight: bold;
 }
 
+.bot-message a {
+    color: #75c045;
+}
+
 .li-question {
     cursor: pointer;
     padding: 2% 0;
@@ -328,4 +332,22 @@ footer {
 
 .li-question:hover::before {
     transform: scaleX(1) !important;
+}
+
+.button-section {
+    display: block;
+    width: 60%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.button-section button {
+    border-radius: 1em;
+    background-color: #75c045;
+    padding: 1% 5%;
+    color: #fff;
+    cursor: pointer;
+    border: #75c045;
+    margin-bottom: 5%;
+    font-size: 16px;
 }

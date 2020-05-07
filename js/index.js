@@ -5,17 +5,24 @@ const questionList = document.querySelectorAll(".li-question"),
       userMessage = document.createElement("p"),
       botAnswer = document.createElement("div"),
       botMessage = document.createElement("p"),
-      answersInCategories = document.createElement("ul");
+      answersInCategories = document.createElement("ul"),
+      buttonShow = document.querySelector(".show"),
+      buttonReset = document.querySelector(".reset"),
+      categories = document.querySelector(".categories");
+
 
 let questionListWithAnswers = document.querySelectorAll(".question-list");
 
 userMessage.classList.add("message");
 userAnswer.classList.add("user-answer");
+userAnswer.classList.add("copy");
 
 botMessage.classList.add("message");
 botAnswer.classList.add("bot-message");
+botAnswer.classList.add("copy");
 
 answersInCategories.classList.add("bot-message-green");
+answersInCategories.classList.add("copy");
 
 let countForLi = 0;
 
@@ -82,6 +89,7 @@ const answersOnFourthCategory = {
 const arrayOfCategories = [categoryFirst, categorySecond, categoryThird, categoryFourth],
       arrayOfAnswers = [answersOnFirstCategory, answersOnSecondCategory, answersOnThirdCategory, answersOnFourthCategory];
 
+
 questionList.forEach((elem) => {
 
     elem.addEventListener("click", () => {
@@ -144,7 +152,7 @@ questionList.forEach((elem) => {
         
                     botContainer.appendChild(cloneOfUserAnswer);
 
-                    cloneOfUserMessage.innerHTML = liElem.textContent;
+                    cloneOfUserMessage.textContent = liElem.textContent;
 
                     arrayOfAnswers.forEach((point) => {
 
@@ -176,6 +184,18 @@ questionList.forEach((elem) => {
             });
         
         });
+
+    });
+
+});
+
+buttonReset.addEventListener("click", () => {
+
+    let children = document.querySelectorAll(".copy");
+
+    children.forEach((elem) => {
+
+        botContainer.removeChild(elem);
 
     });
 

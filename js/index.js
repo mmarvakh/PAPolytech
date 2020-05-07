@@ -5,13 +5,37 @@ const questionList = document.querySelectorAll(".li-question"),
       userMessage = document.createElement("p"),
       botAnswer = document.createElement("div"),
       botMessage = document.createElement("p"),
+      datePosition = document.createElement("p"),
       answersInCategories = document.createElement("ul"),
       buttonShow = document.querySelector(".show"),
       buttonReset = document.querySelector(".reset"),
-      categories = document.querySelector(".categories");
-
+      categories = document.querySelector(".categories"),
+      dateOfMessage = document.querySelectorAll(".date-of-message");
 
 let questionListWithAnswers = document.querySelectorAll(".question-list");
+
+let dateOfBotMessage = new Date();
+
+const formatDate = (date) => {
+
+    let hh = date.getHours();
+
+    let min = date.getMinutes();
+    if (min < 10) min = '0' + min;
+
+    let dd = date.getDate();
+    if (dd < 10) dd = '0' + dd;
+
+    let mm = date.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
+
+    let yy = date.getFullYear();
+
+    return hh + ':' + min + ', ' + dd + '.' + mm + '.' + yy;
+
+}
+
+dateOfMessage[0].textContent = formatDate(dateOfBotMessage);
 
 userMessage.classList.add("message");
 userAnswer.classList.add("user-answer");
@@ -23,6 +47,8 @@ botAnswer.classList.add("copy");
 
 answersInCategories.classList.add("bot-message-green");
 answersInCategories.classList.add("copy");
+
+datePosition.classList.add("date-of-message")
 
 let countForLi = 0;
 
@@ -59,7 +85,7 @@ const categoryFourth = {
 // Ответы
 const answersOnFirstCategory = {
     0: "Выдают сертификаты специальные независимые органы по сертификации, которые аккредитованы международной организацией по аккредитации ASI (Assurance Services International). Для получения сертификата компании нужно заключить договор с органом по сертификации и пройти аудит на соответствие требованиям стандартов FSC. Данные органы подвергаются регулярному контролю со стороны ASI. Выбор органа по сертификации является важным и ответственным шагом, следует учитывать не только ценовую политику, но и деловую репутацию.",
-    1: "Для начала Вам необходимо определить вид сертификации и вид сертификата, которые необходимы вашей компании. Далее, вам нужно изучить необходимый стандарт <a href='https://ru.fsc.org/ru-ru/cert/standarty' target='_blank'>ссылка</a> и привести   систему управления на вашем предприятии в соответствие с ними. Далее свяжитесь с одним или с несколькими FSC аккредитованными органами по сертификации (ОС), работающими в России <a href='https://ru.fsc.org/ru-ru/cert/so' target='_blank'>ссылка</a>. Чтобы оценить время, которое потребуется вам на подготовку к сертификации, и ее стоимость, ОС понадобятся некоторые основные сведения о вашей деятельности.",
+    1: "Для начала Вам необходимо определить вид сертификации и вид сертификата, которые необходимы вашей компании. Далее, вам нужно изучить необходимый <a href='https://ru.fsc.org/ru-ru/cert/standarty' target='_blank'>стандарт</a> и привести систему управления на вашем предприятии в соответствие с ними. Далее свяжитесь с одним или с несколькими FSC <a href='https://ru.fsc.org/ru-ru/cert/so' target='_blank'>аккредитованными органами</a> по сертификации (ОС), работающими в России. Чтобы оценить время, которое потребуется вам на подготовку к сертификации, и ее стоимость, ОС понадобятся некоторые основные сведения о вашей деятельности.",
     2: "Сертификация лесоуправления - это вид сертификации для владеющих или управляющих лесами организаций, которые хотят, чтобы их лесоуправление соответствовало требованиям <a href='https://ru.fsc.org/ru-ru/cert/principy' target='_blank'>принципов и критериев FSC</a>. Эти принципы адаптируются к конкретной стране в виде национальных стандартов. В России действует Национальный стандарт FSC. Соответственно, сертификат лесоуправления FSC в России может получить только та организация, чье лесоуправление соответствует требованиям Национального стандарта FSC.",
     3: "Сертификация цепочки поставок требуется производителям, переработчикам и продавцам FSC сертифицированной продукции. Сертификат цепочки поставок подтверждает, что продукция произведена именно из сырья, происходящего из лесов, где лесоуправление сертифицировано. Чтобы это требование соблюдалось, каждый участник цепочки поставок должен иметь такой сертификат. Только в этом случае конечный производитель сможет поставить логотип FSC на свою продукцию."
 }
@@ -94,10 +120,16 @@ questionList.forEach((elem) => {
 
     elem.addEventListener("click", () => {
 
+            let dateAndTime = new Date();
+
         let cloneOfUserAnswer = userAnswer.cloneNode(true),
-            cloneOfUserMessage = userMessage.cloneNode(true);
+            cloneOfUserMessage = userMessage.cloneNode(true),
+            cloneOfDatePosition = datePosition.cloneNode(true);
+
+        cloneOfDatePosition.textContent = formatDate(dateAndTime);
              
-        cloneOfUserAnswer.appendChild(cloneOfUserMessage);     
+        cloneOfUserAnswer.appendChild(cloneOfUserMessage);
+        cloneOfUserAnswer.appendChild(cloneOfDatePosition);    
         
         botContainer.appendChild(cloneOfUserAnswer);
 
@@ -144,11 +176,17 @@ questionList.forEach((elem) => {
             li.forEach((liElem) => {
         
                 liElem.addEventListener("click", () => {
+
+                    let dateAndTime = new Date();
         
                     let cloneOfUserAnswer = userAnswer.cloneNode(true),
-                        cloneOfUserMessage = userMessage.cloneNode(true);
+                        cloneOfUserMessage = userMessage.cloneNode(true),
+                        cloneOfDatePosition = datePosition.cloneNode(true);
+
+                    cloneOfDatePosition.textContent = formatDate(dateAndTime);
              
-                    cloneOfUserAnswer.appendChild(cloneOfUserMessage);     
+                    cloneOfUserAnswer.appendChild(cloneOfUserMessage);
+                    cloneOfUserAnswer.appendChild(cloneOfDatePosition);     
         
                     botContainer.appendChild(cloneOfUserAnswer);
 

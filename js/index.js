@@ -1,6 +1,5 @@
-
-const questionList = document.querySelectorAll(".li-question"),
-      botContainer = document.querySelector(".bot-container"),
+// Инициализация существующих и добавление новых блоков
+const botContainer = document.querySelector(".bot-container"),
       userAnswer = document.createElement("div"),
       userMessage = document.createElement("p"),
       botAnswer = document.createElement("div"),
@@ -9,13 +8,16 @@ const questionList = document.querySelectorAll(".li-question"),
       answersInCategories = document.createElement("ul"),
       buttonShow = document.querySelector(".show"),
       buttonReset = document.querySelector(".reset"),
-      categories = document.querySelector(".categories"),
+      categories = document.querySelectorAll(".categories")[0],
       dateOfMessage = document.querySelectorAll(".date-of-message");
 
-let questionListWithAnswers = document.querySelectorAll(".question-list");
+let questionListWithAnswers = document.querySelectorAll(".question-list"),
+    questionList = document.querySelectorAll(".li-question");
 
+// Экземпляр объекта Date для добавления даты и времени под каждым сообщением
 let dateOfBotMessage = new Date();
 
+// Функция для форматирования и возврата значений даты и времени
 const formatDate = (date) => {
 
     let hh = date.getHours();
@@ -35,8 +37,10 @@ const formatDate = (date) => {
 
 }
 
+// Присвоение даты и времени самому первому приветственному сообщению от программы
 dateOfMessage[0].textContent = formatDate(dateOfBotMessage);
 
+// Добавление классов созданным блокам и параграфам
 userMessage.classList.add("message");
 userAnswer.classList.add("user-answer");
 userAnswer.classList.add("copy");
@@ -50,9 +54,10 @@ answersInCategories.classList.add("copy");
 
 datePosition.classList.add("date-of-message")
 
+// Счётчик для добавления id каждому пункту списка
 let countForLi = 0;
 
-// Категории
+// Категории вопросов
 const categoryFirst = {
     questionFirst: "Кто выдает сертификаты?",
     questionSecond: "С чего нам начать?",
@@ -82,7 +87,7 @@ const categoryFourth = {
     questionSeventh: "Могу ли я продавать свою продукцию за границу без сертификата FSC?"
 }
 
-// Ответы
+// Ответы на вопросы
 const answersOnFirstCategory = {
     0: "Выдают сертификаты специальные независимые органы по сертификации, которые аккредитованы международной организацией по аккредитации ASI (Assurance Services International). Для получения сертификата компании нужно заключить договор с органом по сертификации и пройти аудит на соответствие требованиям стандартов FSC. Данные органы подвергаются регулярному контролю со стороны ASI. Выбор органа по сертификации является важным и ответственным шагом, следует учитывать не только ценовую политику, но и деловую репутацию.",
     1: "Для начала Вам необходимо определить вид сертификации и вид сертификата, которые необходимы вашей компании. Далее, вам нужно изучить необходимый <a href='https://ru.fsc.org/ru-ru/cert/standarty' target='_blank'>стандарт</a> и привести систему управления на вашем предприятии в соответствие с ними. Далее свяжитесь с одним или с несколькими FSC <a href='https://ru.fsc.org/ru-ru/cert/so' target='_blank'>аккредитованными органами</a> по сертификации (ОС), работающими в России. Чтобы оценить время, которое потребуется вам на подготовку к сертификации, и ее стоимость, ОС понадобятся некоторые основные сведения о вашей деятельности.",
@@ -112,16 +117,25 @@ const answersOnFourthCategory = {
     6: "Да, можете - схема FSC является добровольной. Но большинство покупателей запрашивают подтверждение соответствия международным схемам лесной сертификации. Возможно, Вам придется искать другого покупателя либо другие рынки сбыта."
 }
 
+// Инициализация массивов с категориями и ответами на вопросы
 const arrayOfCategories = [categoryFirst, categorySecond, categoryThird, categoryFourth],
       arrayOfAnswers = [answersOnFirstCategory, answersOnSecondCategory, answersOnThirdCategory, answersOnFourthCategory];
 
+// Обработчик события для кнопки показа категорий
+buttonShow.addEventListener("click", () => {
 
+    categories.scrollIntoView({behavior: "smooth"});
+
+});
+
+// Обработка нажатия на пункты из блока с категориями
 questionList.forEach((elem) => {
 
     elem.addEventListener("click", () => {
 
-            let dateAndTime = new Date();
+        let dateAndTime = new Date();
 
+        // Создание клонов элементов для динамичного появления в любой момент
         let cloneOfUserAnswer = userAnswer.cloneNode(true),
             cloneOfUserMessage = userMessage.cloneNode(true),
             cloneOfDatePosition = datePosition.cloneNode(true);
@@ -135,6 +149,7 @@ questionList.forEach((elem) => {
 
         cloneOfUserMessage.textContent = elem.textContent;
 
+        // Обработка показа нужных вопросов после нажатия на категорию
         arrayOfCategories.forEach((element) => {
 
             if (arrayOfCategories.indexOf(element) == elem.id) {
@@ -161,6 +176,7 @@ questionList.forEach((elem) => {
 
                 countForLi = 0;
 
+                // Добавление элемента в конец чата и плавный переход к нему
                 botContainer.appendChild(cloneOfAnswers);
                 cloneOfAnswers.scrollIntoView({behavior: "smooth"});
 
@@ -179,7 +195,8 @@ questionList.forEach((elem) => {
                 liElem.addEventListener("click", () => {
 
                     let dateAndTime = new Date();
-        
+                    
+                    // Создание клонов элементов для динамичного появления в любой момент
                     let cloneOfUserAnswer = userAnswer.cloneNode(true),
                         cloneOfUserMessage = userMessage.cloneNode(true),
                         cloneOfDatePosition = datePosition.cloneNode(true);
@@ -199,6 +216,7 @@ questionList.forEach((elem) => {
 
                             let dateAndTime = new Date();
 
+                            // Создание клонов элементов для динамичного появления в любой момент
                             let cloneOfBotAnswer = botAnswer.cloneNode(true),
                                 cloneOfBotMessage = botMessage.cloneNode(true),
                                 cloneOfDatePosition = datePosition.cloneNode(true);
@@ -218,6 +236,7 @@ questionList.forEach((elem) => {
 
                             }
 
+                            // Добавление элемента в конец чата и плавный переход к нему
                             botContainer.appendChild(cloneOfBotAnswer);
                             cloneOfBotAnswer.scrollIntoView({behavior: "smooth"});
 
@@ -235,6 +254,7 @@ questionList.forEach((elem) => {
 
 });
 
+// Обработчик события для кнопки сброса
 buttonReset.addEventListener("click", () => {
 
     let children = document.querySelectorAll(".copy");
@@ -245,12 +265,6 @@ buttonReset.addEventListener("click", () => {
 
     });
 
-});
-
-buttonShow.addEventListener("click", () => {
-
-    console.log(1);
-    
 });
 
 /*if (elem.classList.contains("question-first")) {

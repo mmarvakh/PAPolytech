@@ -98,7 +98,7 @@ const answersOnSecondCategory = {
 
 const answersOnThirdCategory = {
     0: "Органы по сертификации работают по всей России и не привязаны к конкретному городу. В перечне консультантов на сайте FSC России есть указание на регионы их деятельности, но они также не привязаны к конкретному населенному пункту.",
-    1: "FSC России предлагает сертифицируемым компаниям, держателям сертификатов, заинтересованным сторонам различные программы обучения. Подробную информацию можно найти <a href='https://ru.fsc.org/ru-ru/cert/study' target='_blank'>здесь</span>. Также на <a href='https://etraining.fsc.org/' target='_blank'>сайте</a> есть онлайн курсы на английском языке по товарным знакам, цепочке поставок и контролируемой древесине для аудиторов. В случае успешного прохождения онлайн курса участник получает сертификат, подтверждающий прохождение обучения.",
+    1: "FSC России предлагает сертифицируемым компаниям, держателям сертификатов, заинтересованным сторонам различные программы обучения. Подробную информацию можно найти <a href='https://ru.fsc.org/ru-ru/cert/study' target='_blank'>здесь</a>. Также на <a href='https://etraining.fsc.org/' target='_blank'>сайте</a> есть онлайн курсы на английском языке по товарным знакам, цепочке поставок и контролируемой древесине для аудиторов. В случае успешного прохождения онлайн курса участник получает сертификат, подтверждающий прохождение обучения.",
     2: "Региональных специалистов у нас нет, пишите или звоните в офис в Москве. Контакты размещены <a href='https://ru.fsc.org/ru-ru/o_nas/kontakty' target='_blank'>здесь</a>. Есть также представитель в Красноярске, к нему можно обращаться, если Вы проживаете в СФО или ДВФО."
 }
 
@@ -162,6 +162,7 @@ questionList.forEach((elem) => {
                 countForLi = 0;
 
                 botContainer.appendChild(cloneOfAnswers);
+                cloneOfAnswers.scrollIntoView({behavior: "smooth"});
 
             }
 
@@ -196,8 +197,13 @@ questionList.forEach((elem) => {
 
                         if (arrayOfAnswers.indexOf(point) == elem.id) {
 
+                            let dateAndTime = new Date();
+
                             let cloneOfBotAnswer = botAnswer.cloneNode(true),
-                                cloneOfBotMessage = botMessage.cloneNode(true);
+                                cloneOfBotMessage = botMessage.cloneNode(true),
+                                cloneOfDatePosition = datePosition.cloneNode(true);
+
+                            cloneOfDatePosition.textContent = formatDate(dateAndTime);    
                             
                             for (key in point) {
 
@@ -206,12 +212,14 @@ questionList.forEach((elem) => {
                                     cloneOfBotMessage.innerHTML = point[key];
 
                                     cloneOfBotAnswer.appendChild(cloneOfBotMessage);
+                                    cloneOfBotAnswer.appendChild(cloneOfDatePosition)
 
                                 }
 
                             }
 
                             botContainer.appendChild(cloneOfBotAnswer);
+                            cloneOfBotAnswer.scrollIntoView({behavior: "smooth"});
 
                         }
 
@@ -237,6 +245,12 @@ buttonReset.addEventListener("click", () => {
 
     });
 
+});
+
+buttonShow.addEventListener("click", () => {
+
+    console.log(1);
+    
 });
 
 /*if (elem.classList.contains("question-first")) {

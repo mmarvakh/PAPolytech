@@ -289,7 +289,7 @@ footer {
     position: relative;
     list-style: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 3%;
     font-weight: 550;
     text-transform: uppercase;
@@ -343,13 +343,21 @@ footer {
 
 .button-section button {
     border-radius: 1em;
-    background-color: #75c045;
+    background-color: #fff;
     padding: 1% 5%;
-    color: #fff;
+    color: #646464;
     cursor: pointer;
-    border: #75c045;
+    border: 1px solid #646464;
     margin-bottom: 3%;
     font-size: 16px;
-    outline: none
+    outline: none;
+    transition: 0.3s all ease;
+}
+
+.button-section button:hover {
+    border: 1px solid #75c045;
+    color: #fff;
+    box-shadow: inset 0 80px #75c045;
+    transition: all 0.5s ease;
 }
 

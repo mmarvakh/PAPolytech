@@ -1,5 +1,6 @@
 // Инициализация существующих и добавление новых блоков
 const botContainer = document.querySelector(".bot-container"),
+      firstMessage = document.querySelector(".first-message"),
       userAnswer = document.createElement("div"),
       userMessage = document.createElement("p"),
       botAnswer = document.createElement("div"),
@@ -124,7 +125,7 @@ const arrayOfCategories = [categoryFirst, categorySecond, categoryThird, categor
 // Обработчик события для кнопки показа категорий
 buttonShow.addEventListener("click", () => {
 
-    categories.scrollIntoView({behavior: "smooth"});
+    firstMessage.scrollIntoView({behavior: "smooth"});
 
 });
 
@@ -264,6 +265,8 @@ buttonReset.addEventListener("click", () => {
         botContainer.removeChild(elem);
 
     });
+
+    firstMessage.scrollIntoView({behavior: "smooth"});
 
 });
 

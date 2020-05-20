@@ -39,6 +39,7 @@ hr {
 }
 
 .header-info li:first-child {
+    margin-left: 2%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 12px;
@@ -64,17 +65,20 @@ hr {
 
 .nav-logo {
     padding: 0 !important;
-    top: -5px;
+    display: unset;
+    width: 27%;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end
 }
 
 .nav-menu {
     padding: 0 !important;
+    display: unset;
+    width: 73%
 }
 
 .nav-menu ul {
@@ -101,7 +105,7 @@ nav {
     font-weight: bold;
     line-height: 15px;
     height: 80px;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
     color: #646464;
     vertical-align: middle;
@@ -122,6 +126,7 @@ nav {
     background-color: #75c045;
     padding: 30px;
     z-index: 100;
+    border: 2px solid #eee
 }
 
 .nav-menu ul>li>ul>li>a {
@@ -203,10 +208,6 @@ nav {
     color: rgba(255,255,255,0.6);
 }
 
-main {
-    
-}
-
 footer {
     width: 100%;
     height: auto;
@@ -220,7 +221,7 @@ footer {
 }
 
 .footer-logo-left img, .footer-logo-right img {
-    height: 180px;
+    height: 160px;
     width: auto;
 }
 
@@ -309,7 +310,7 @@ footer {
 }
 
 .bot-message a {
-    color: #75c045;
+    color: #5e9d35;
 }
 
 .li-question {

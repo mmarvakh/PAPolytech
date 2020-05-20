@@ -2,111 +2,124 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./img/favicon/logo.jpg" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/68084d886f.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="https://ru.fsc.org/assets/img/favicon-120x120.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/68084d886f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
     <title>FAQ - виртуальный помощник</title>
 </head>
 <body>
     <header>
         <section class="container-fluid">
             <ul class="header-info">
-                <li><a href="">FSC РОССИЯ</a></li>
-                <li><a href="">ЗАИНТЕРЕСОВАННЫМ СТОРОНАМ</a></li>
-                <li><a href="">ТОВАРНЫЕ ЗНАКИ FSC</a></li>
-                <li><a href="">РЕСУРСЫ</a></li>
-                <li><a href="">ЛЕГАЛЬНОСТЬ ДРЕВЕСИНЫ</a></li>
-                <li><a href="">ВСЕ НОВОСТИ</a></li>
-                <li><a href="">FSC INTERNATIONAL</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru">FSC РОССИЯ</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru/for_zs">ЗАИНТЕРЕСОВАННЫМ СТОРОНАМ</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru/tm-fsc">ТОВАРНЫЕ ЗНАКИ FSC</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru/1056107710891091108810891099">РЕСУРСЫ</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru/ld">ЛЕГАЛЬНОСТЬ ДРЕВЕСИНЫ</a></li>
+                <li><a href="https://ru.fsc.org/ru-ru/news">ВСЕ НОВОСТИ</a></li>
+                <li><a href="https://fsc.org/en">FSC INTERNATIONAL</a></li>
             </ul>
         </section>
-        <nav class="container row">
-            <div class="nav-logo col-md-3">
+        <nav class="container">
+            <div class="nav-logo">
                 <img src="./img/header/logo.jpg" alt="FSC. Леса для всех навсегда">
             </div>
-            <div class="nav-menu col-md-9">
+            <div class="nav-menu">
+                <input type="checkbox" name="toggle" id="menu" class="toggle-menu">
+                <label for="menu" class="toggle-menu"><i class="fas fa-bars"></i></label>
                 <ul>
                     <li>
-                        <a href="">О НАС</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_1">
+                        <a href="https://ru.fsc.org/ru-ru/o_nas">О НАС</a>
+                        <label for="sub_1" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Наша история</a></li>
-                            <li><a href="#">Основные принципы работы FSC</a></li>
-                            <li><a href="#">Наша миссия</a></li>
-                            <li><a href="#">Глобальная стратегия</a></li>
-                            <li><a href="#">FSC в России</a></li>
-                            <li><a href="#">Сотрудники</a></li>
-                            <li><a href="#">Контакты</a></li>
-                            <li><a href="#">Вакансии и конкурсы</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/1053107210961072-1080108910901086108810801103">Наша история</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/principles">Основные принципы работы FSC</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/-107">Наша миссия</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/1043108310861073107210831100108510721103-108910901088107210901077107510801103">Глобальная стратегия</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/fsc_in_russia">FSC в России</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/our_team">Сотрудники</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/kontakty">Контакты</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/o_nas/vacancies">Вакансии и конкурсы</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">НАША ДЕЯТЕЛЬНОСТЬ</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_2">
+                        <a href="https://ru.fsc.org/ru-ru/chto_my_delaem">НАША ДЕЯТЕЛЬНОСТЬ</a>
+                        <label for="sub_2" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Значимость FSC</a></li>
-                            <li><a href="#">Факты и цифры</a></li>
-                            <li><a href="#">Услуги</a></li>
-                            <li><a href="#">Обучение</a></li>
-                            <li><a href="#">Истории успеха</a></li>
-                            <li><a href="#">Проекты</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/1047108510721095108010841086108910901100-fsc">Значимость FSC</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/facts_and_figures">Факты и цифры</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/-132">Услуги</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/training">Обучение</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/success_with_fsc">Истории успеха</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/chto_my_delaem/project">Проекты</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">СЕРТИФИКАЦИЯ</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_3">
+                        <a href="https://ru.fsc.org/ru-ru/cert">СЕРТИФИКАЦИЯ</a>
+                        <label for="sub_3" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Виды сертификации</a></li>
-                            <li><a href="#">Виды сертификатов</a></li>
-                            <li><a href="#">5 шагов к сертификации</a></li>
-                            <li><a href="#">Принципы и критерии</a></li>
-                            <li><a href="#">Стандарты и правила</a></li>
-                            <li><a href="#">Консалтинг</a></li>
-                            <li><a href="#">Органы по сертификации</a></li>
-                            <li><a href="#">Разрешение споров</a></li>
-                            <li><a href="#">Заинтересованные стороны</a></li>
-                            <li><a href="#">Поддержание сертификата FSC – советы руководителю</a></li>
-                            <li><a href="#">Рабочие инструменты</a></li>
-                            <li><a href="#">Обучение</a></li>
-                            <li><a href="#">Сертифицированные компании в России</a></li>
-                            <li><a href="#">Реестр зарегистрированных пестицидов</a></li>
-                            <li><a href="#">Дополнительные материалы по контролируемой древесине</a></li>
-                            <li><a href="#">Достижение целей устойчивого развития</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/1042108010761099-108910771088109010801092108010821072109410801080">Виды сертификации</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/vidy_cert">Виды сертификатов</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/five_steps_to_certification">5 шагов к сертификации</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/principy">Принципы и критерии</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/standarty">Стандарты и правила</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/consult">Консалтинг</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/so">Органы по сертификации</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/spory">Разрешение споров</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/nbsp">Заинтересованные стороны</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/advice">Поддержание сертификата FSC – советы руководителю</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/tools">Рабочие инструменты</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/study">Обучение</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/fsc_companii">Сертифицированные компании в России</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/pestreestr">Реестр зарегистрированных пестицидов</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/-141">Дополнительные материалы по контролируемой древесине</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cert/sdg">Достижение целей устойчивого развития</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">РЫНКИ И ПАРТНЕРЫ</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_4">
+                        <a href="https://ru.fsc.org/ru-ru/rp">РЫНКИ И ПАРТНЕРЫ</a>
+                        <label for="sub_4" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Развитие рынка</a></li>
-                            <li><a href="#">FSC-продукция в РФ</a></li>
-                            <li><a href="#">FSC-продукция в мире</a></li>
-                            <li><a href="#">Наши партнеры</a></li>
-                            <li><a href="#">Рейтинг «ГудВуд®»</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/rp/10561072107910741080109010801077-10881099108510821072">Развитие рынка</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/rp/fsc-russia">FSC-продукция в РФ</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/rp/fsc-world">FSC-продукция в мире</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/rp/np">Наши партнеры</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/rp/goodwood">Рейтинг «ГудВуд®»</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">ПРИСОЕДИНЯЙТЕСЬ</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_5">
+                        <a href="https://ru.fsc.org/ru-ru/105510881080108910861077107610801085110310811090107710891100">ПРИСОЕДИНЯЙТЕСЬ</a>
+                        <label for="sub_5" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Стать членом FSC</a></li>
-                            <li><a href="#">Стать партнером FSC</a></li>
-                            <li><a href="#">Участвовать в FSC-пятнице</a></li>
-                            <li><a href="#">FSC-кампания</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/105510881080108910861077107610801085110310811090107710891100/join_us">Стать членом FSC</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/105510881080108910861077107610801085110310811090107710891100/10571090107210901100-108710721088109010851077108810861084-fsc">Стать партнером FSC</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/105510881080108910861077107610801085110310811090107710891100/fsc_friday">Участвовать в FSC-пятнице</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/105510881080108910861077107610801085110310811090107710891100/campaign">FSC-кампания</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">FSC В СНГ</a>
+                        <input type="checkbox" name="toggle" class="toggle-subMenu" id="sub_6">
+                        <a href="https://ru.fsc.org/ru-ru/cis">FSC В СНГ</a>
+                        <label for="sub_6" class="toggle-subMenu"><i class="fas fa-arrow-circle-down"></i></label>
                         <ul>
-                            <li><a href="#">Азербайджан</a></li>
-                            <li><a href="#">Армения</a></li>
-                            <li><a href="#">Беларусь</a></li>
-                            <li><a href="#">Грузия</a></li>
-                            <li><a href="#">Казахстан</a></li>
-                            <li><a href="#">Кыргызстан</a></li>
-                            <li><a href="#">Таджикистан</a></li>
-                            <li><a href="#">Туркменистан</a></li>
-                            <li><a href="#">Узбекистан</a></li>
-                            <li><a href="#">Украина</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/az">Азербайджан</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/am">Армения</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/by">Беларусь</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/ge">Грузия</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/kz">Казахстан</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/kg">Кыргызстан</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/tj">Таджикистан</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/tm">Туркменистан</a></li>
+                            <li><a href="https://ru.fsc.org/ru-ru/cis/uz">Узбекистан</a></li>
+                            <li><a href="https://ua.fsc.org/ua-ua">Украина</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -148,10 +161,10 @@
         <section class="container-fluid footer-list">
             <section class="container footer-info-container">
                 <ul class="footer-info">
-                    <li><a href="">ГЛАВНАЯ</a></li>
-                    <li><a href="">КОНТАКТЫ</a></li>
-                    <li><a href="">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a></li>
-                    <li><a href="">ЭЛЕКТРОННЫЕ РАССЫЛКИ</a></li>
+                    <li><a href="https://ru.fsc.org/ru-ru">ГЛАВНАЯ</a></li>
+                    <li><a href="https://ru.fsc.org/ru-ru/o_nas/kontakty">КОНТАКТЫ</a></li>
+                    <li><a href="https://ru.fsc.org/ru-ru/legal">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a></li>
+                    <li><a href="https://ru.fsc.org/ru-ru/-128">ЭЛЕКТРОННЫЕ РАССЫЛКИ</a></li>
                 </ul>
                 <ul class="footer-info">
                     <li>© Forest Stewardship Council ® · FSC F000227</li>
@@ -161,7 +174,7 @@
         <section class="container">
             <section class="img-container">
                 <div class="footer-logo-left"><img src="./img/footer/footer-logo.png" alt="FORESTS FOR ALL FOREVER"></div>
-                <div class="footer-logo-right"><img src="./img/footer/footer-logo.png" alt="FORESTS FOR ALL FOREVER"></div>
+                <div class="footer-logo-right"><img src="./img/footer/footer-logo-2.png" alt="FORESTS FOR ALL FOREVER"></div>
             </section>
         </section>
     </footer>

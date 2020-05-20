@@ -336,10 +336,10 @@ footer {
 }
 
 .button-section {
-    display: block;
+    display: flex;
     width: 60%;
-    position: relative;
     margin: 0 auto;
+    justify-content: flex-start
 }
 
 .button-section button {
@@ -350,6 +350,7 @@ footer {
     cursor: pointer;
     border: 1px solid #646464;
     margin-bottom: 3%;
+    margin-right: 0.8%;
     font-size: 16px;
     outline: none;
     transition: 0.3s all ease;

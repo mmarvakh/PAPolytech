@@ -10,7 +10,7 @@
 .nav-menu label.toggle-menu .fas {
     font-size: 45px;
     color: #979797;
-    transition: 0.3s all ease;
+    transition: 0.5s all ease;
 }
 
 
@@ -33,7 +33,7 @@
 
     input.toggle-menu:checked ~ ul {
         border: 1px solid #eee;
-        box-shadow: 4px #eee; 
+        box-shadow: 0 0 4px #eee; 
         background-color: #fff;
         display: block;
         position: absolute;
@@ -45,7 +45,8 @@
     input.toggle-menu:checked ~ label.toggle-menu .fas {
         font-size: 50px;
         color: #75c045;
-        transition: 0.3s all ease
+        transform: rotate(180deg);
+        transition: 0.5s all ease
     }
 
     .nav-menu li:hover > ul {
@@ -120,8 +121,12 @@
         align-items: center
     }
 
-    .bot-container {
+    .bot-container, .button-section {
         width: 100%
+    }
+
+    .button-section {
+        margin: 3.5% auto 0 auto;
     }
 
     .footer-info {

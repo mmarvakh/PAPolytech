@@ -136,9 +136,21 @@
         padding: 2% 0;
     }
 
-    .footer-info:last-child {
-        flex-direction: row;
-        align-items: flex-end
+    .footer-info:first-child {
+        margin-top: 2%;
+    }
+
+    .footer-info:first-child li {
+        display: block;
+        width: 100%;
+        padding-bottom: 2px;
+        margin-bottom: 1%;
+        border-bottom: 1px solid rgba(230,230,230,0.1);
+    }
+
+    .footer-info-container {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -156,7 +168,14 @@
     }
 
     .img-container {
-        flex-direction: column;
-        align-items: center
+        display: none;
+    }
+
+    .bot-message {
+        font-size: 14px;
+    }
+
+    .bot-message-green {
+        font-size: 11px;
     }
 }

@@ -56,7 +56,8 @@ answersInCategories.classList.add("copy");
 datePosition.classList.add("date-of-message")
 
 // Счётчик для добавления id каждому пункту списка
-let countForLi = 0;
+let countForLi = 0,
+    countID = 0;
 
 // Категории вопросов
 const categoryFirst = {
@@ -177,15 +178,18 @@ questionList.forEach((elem) => {
 
                 countForLi = 0;
 
+                cloneOfAnswers.id = elem.id;
+
                 // Добавление элемента в конец чата и плавный переход к нему
                 botContainer.appendChild(cloneOfAnswers);
                 cloneOfAnswers.scrollIntoView({behavior: "smooth"});
 
+                // Повторная выборка сообщений от бота с выбором вопросов
+                questionListWithAnswers = document.querySelectorAll(".question-list");
+
             }
 
         });
-
-        questionListWithAnswers = document.querySelectorAll(".question-list");
 
         questionListWithAnswers.forEach((elemLi) => {
 
@@ -195,6 +199,8 @@ questionList.forEach((elem) => {
         
                 liElem.addEventListener("click", () => {
 
+                    countID = liElem.parentElement.id
+
                     let dateAndTime = new Date();
                     
                     // Создание клонов элементов для динамичного появления в любой момент
@@ -203,7 +209,7 @@ questionList.forEach((elem) => {
                         cloneOfDatePosition = datePosition.cloneNode(true);
 
                     cloneOfDatePosition.textContent = formatDate(dateAndTime);
-             
+            
                     cloneOfUserAnswer.appendChild(cloneOfUserMessage);
                     cloneOfUserAnswer.appendChild(cloneOfDatePosition);     
         
@@ -213,7 +219,7 @@ questionList.forEach((elem) => {
 
                     arrayOfAnswers.forEach((point) => {
 
-                        if (arrayOfAnswers.indexOf(point) == elem.id) {
+                        if (arrayOfAnswers.indexOf(point) == countID) {
 
                             let dateAndTime = new Date();
 
@@ -233,13 +239,13 @@ questionList.forEach((elem) => {
                                     cloneOfBotAnswer.appendChild(cloneOfBotMessage);
                                     cloneOfBotAnswer.appendChild(cloneOfDatePosition)
 
+                                    // Добавление элемента в конец чата и плавный переход к нему
+                                    botContainer.appendChild(cloneOfBotAnswer);
+                                    cloneOfBotAnswer.scrollIntoView({behavior: "smooth"});
+
                                 }
 
                             }
-
-                            // Добавление элемента в конец чата и плавный переход к нему
-                            botContainer.appendChild(cloneOfBotAnswer);
-                            cloneOfBotAnswer.scrollIntoView({behavior: "smooth"});
 
                         }
 

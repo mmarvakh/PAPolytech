@@ -1,3 +1,9 @@
+"use strict";
+
+// Полифиллы
+import "@babel/polyfill";
+import 'nodelist-foreach-polyfill';
+
 // Инициализация существующих и добавление новых блоков
 const botContainer = document.querySelector(".bot-container"),
       firstMessage = document.querySelector(".first-message"),
@@ -160,7 +166,7 @@ questionList.forEach((elem) => {
 
                 cloneOfAnswers.classList.add("question-list");
 
-                for (key in element) {
+                for (let key in element) {
 
                     let li = document.createElement("li");
 
@@ -230,7 +236,7 @@ questionList.forEach((elem) => {
 
                             cloneOfDatePosition.textContent = formatDate(dateAndTime);    
                             
-                            for (key in point) {
+                            for (let key in point) {
 
                                 if (key == liElem.id) {
 

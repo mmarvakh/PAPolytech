@@ -1,0 +1,32 @@
+{
+  "name": "FSC",
+  "version": "1.0.0",
+  "description": "WebSite for FSC",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "babel": "^6.23.0",
+    "element-closest": "^3.0.1",
+    "es6-polyfill": "^1.1.0",
+    "es6-promise": "^4.2.8",
+    "fetch-polyfill": "^0.8.2",
+    "foreach": "^2.0.5",
+    "formdata-polyfill": "^3.0.19",
+    "node": "^13.6.0",
+    "nodelist-foreach-polyfill": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "author": "Mark Marvakh",
+  "license": "ISC"
+}
